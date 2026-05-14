@@ -1,6 +1,3 @@
-Du hast recht. Hier ist jetzt die **Schritt-für-Schritt-Ausführung**, so wie du es im Notebook machen sollst.
-
-Du erstellst ein neues Jupyter Notebook und führst die folgenden Zellen **von oben nach unten** aus.
 
 ---
 
