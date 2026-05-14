@@ -1298,114 +1298,117 @@ Beide Modelle wurden auf demselben Testset evaluiert, damit der Vergleich fair i
 
 Macro-F1 ist besonders wichtig, weil die Zielklassen nicht perfekt gleichverteilt sind.
 ```
+Super, freut mich sehr. Morgen machst du einfach Folgendes:
 
-Damit hast du jetzt nicht nur die fertige Lösung, sondern auch die genaue Ausführungsreihenfolge.
+## Morgen wieder öffnen
 
+### 1. PowerShell öffnen
 
+Öffne wieder **PowerShell**.
 
+### 2. In deinen Projektordner wechseln
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**Zelle 1 führst du nicht im normalen Terminal aus**, sondern **direkt im Jupyter Notebook oder in Google Colab**.
-
-Also diese Zeile:
-
-```python
-!pip install -q pandas numpy matplotlib seaborn scikit-learn tensorflow ucimlrepo
+```powershell
+cd C:\Users\patri\student_dropout_project
 ```
 
-kommt in eine **Notebook-Zelle** und wird dort mit **Shift + Enter** ausgeführt.
+### 3. Virtuelle Umgebung aktivieren
 
----
+```powershell
+.venv\Scripts\activate
+```
 
-## Falls du lokal mit Jupyter arbeitest
+Danach sollte links wieder ungefähr stehen:
 
-Dann ist die Reihenfolge so:
+```text
+(.venv)
+```
 
-### 1. Erst im normalen Terminal / PowerShell / Ubuntu-Terminal:
+### 4. Jupyter starten
 
-```bash
-cd dein/projektordner
+```powershell
 jupyter notebook
 ```
 
 oder:
 
-```bash
+```powershell
 jupyter lab
 ```
 
-Danach öffnet sich Jupyter im Browser.
+### 5. Link im Browser öffnen
 
-### 2. Im Browser erstellst du ein neues Notebook
-
-Dann fügst du dort als erste Code-Zelle ein:
-
-```python
-!pip install -q pandas numpy matplotlib seaborn scikit-learn tensorflow ucimlrepo
-```
-
-Dann ausführst du die Zelle mit:
+Jupyter zeigt dir wieder einen Link wie:
 
 ```text
-Shift + Enter
+http://localhost:8889/lab?token=...
+```
+
+oder:
+
+```text
+http://localhost:8888/lab?token=...
+```
+
+Diesen Link kopierst du in den Browser.
+
+Dann öffnest du deine Datei:
+
+```text
+predict_students.ipynb
 ```
 
 ---
 
-## Falls du Google Colab nutzt
+## Wichtig zu `localhost`
 
-Dann öffnest du einfach dein Colab-Notebook und führst **Zelle 1 direkt dort** aus.
+Dein alter Link:
+
+```text
+http://localhost:8889/lab/tree/predict_students.ipynb
+```
+
+funktioniert morgen **nur**, wenn Jupyter wieder auf demselben Port läuft und der Server aktiv ist.
+
+Wenn Jupyter geschlossen ist, ist `localhost` nicht erreichbar.
+
+Deshalb immer zuerst:
+
+```powershell
+cd C:\Users\patri\student_dropout_project
+.venv\Scripts\activate
+jupyter lab
+```
+
+Dann den neuen Link öffnen.
 
 ---
 
-## Wichtig
+## Projekt richtig schließen
 
-Das Ausrufezeichen `!` bedeutet:
+Wenn du fertig bist:
 
-```python
-!pip install ...
+1. Notebook speichern: **Strg + S**
+2. Browser-Tab schließen
+3. In PowerShell bei laufendem Jupyter:
+
+```text
+Ctrl + C
 ```
 
-Jupyter soll diesen Befehl wie einen Terminal-Befehl ausführen.
+Dann fragt Jupyter eventuell:
 
-Deshalb funktioniert das in einer Notebook-Zelle.
-
-Im normalen Terminal würdest du stattdessen **ohne Ausrufezeichen** schreiben:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn tensorflow ucimlrepo
+```text
+Shutdown this Jupyter server?
 ```
 
-Meine Empfehlung für dich: Nutze **Google Colab**, dann musst du dich weniger mit lokaler Installation beschäftigen.
+Dann eingeben:
+
+```text
+y
+```
+
+und Enter drücken.
+
+Danach ist alles sauber geschlossen.
+
